@@ -57,30 +57,16 @@ struct MDPMonthView: View {
             
             GeometryReader { reader in
                 if showMonthYearPicker {
-                    HStack(alignment: .center) {
-                        MDPMonthYearPicker(date: monthDataModel.controlDate) { (month, year) in
-                            self.monthDataModel.show(month: month, year: year)
-                        }
+                    MDPMonthYearPicker(date: monthDataModel.controlDate) { (month, year) in
+                        self.monthDataModel.show(month: month, year: year)
                     }
-                    .background(
-                        RoundedRectangle(cornerRadius: 10)
-                            .foregroundColor(Color(UIColor.systemBackground))
-                    )
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.accentColor, lineWidth: 1)
-                    )
-                    .padding()
+                    .padding(.horizontal)
                 }
                 else {
                     MDPContentView()
                 }
             }
         }
-        .background(
-            RoundedRectangle(cornerRadius: 10)
-                .foregroundColor(Color(UIColor.systemBackground))
-        )
         .overlay(
             RoundedRectangle(cornerRadius: 10)
                 .stroke(Color.accentColor, lineWidth: 1)

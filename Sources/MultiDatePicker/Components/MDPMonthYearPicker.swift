@@ -49,6 +49,10 @@ struct MDPMonthYearPicker: View {
             .frame(width: 150)
             .clipped()
             
+            Divider()
+                .frame(height: 20)
+                .foregroundColor(.accentColor)
+            
             Picker("", selection: self.$selectedYear) {
                 ForEach(years, id: \.self) { year in
                     Text(String(format: "%d", year))
@@ -61,6 +65,10 @@ struct MDPMonthYearPicker: View {
             .frame(width: 100)
             .clipped()
         }
+        .overlay(
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(Color.accentColor, lineWidth: 1)
+        )
     }
 }
 

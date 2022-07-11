@@ -13,21 +13,13 @@ import SwiftUI
 struct MDPContentView: View {
     @EnvironmentObject var monthDataModel: MDPModel
     
-    static let multplier = 0.045
-    
-    let columns = [
-
-        GridItem(.flexible(minimum: UIScreen.main.bounds.width * multplier, maximum: UIScreen.main.bounds.width * 0.2), spacing: 0, alignment: .center),
-        GridItem(.flexible(minimum: UIScreen.main.bounds.width * multplier, maximum: UIScreen.main.bounds.width * 0.2), spacing: 0, alignment: .center),
-        GridItem(.flexible(minimum: UIScreen.main.bounds.width * multplier, maximum: UIScreen.main.bounds.width * 0.2), spacing: 0, alignment: .center),
-        GridItem(.flexible(minimum: UIScreen.main.bounds.width * multplier, maximum: UIScreen.main.bounds.width * 0.2), spacing: 0, alignment: .center),
-        GridItem(.flexible(minimum: UIScreen.main.bounds.width * multplier, maximum: UIScreen.main.bounds.width * 0.2), spacing: 0, alignment: .center),
-        GridItem(.flexible(minimum: UIScreen.main.bounds.width * multplier, maximum: UIScreen.main.bounds.width * 0.2), spacing: 0, alignment: .center),
-        GridItem(.flexible(minimum: UIScreen.main.bounds.width * multplier, maximum: UIScreen.main.bounds.width * 0.2), spacing: 0, alignment: .center)
-    ]
+    let columns = Array<GridItem>(
+        repeating: GridItem (.flexible(minimum: UIScreen.main.bounds.width * 0.045, maximum: UIScreen.main.bounds.width)),
+        count: 7
+    )
     
     var body: some View {
-        LazyVGrid(columns: columns, spacing: 0) {
+        LazyVGrid(columns: columns, spacing: 2) {
             ForEach(0..<monthDataModel.dayNames.count, id: \.self) { index in
                 Text(monthDataModel.dayNames[index].replacingOccurrences(of: ".", with: "").uppercased())
                     .font(.system(size: 12))
