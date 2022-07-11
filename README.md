@@ -1,6 +1,6 @@
 # MultiDatePicker - A SwiftUI Component
 
-## Fork of https://github.com/peterent/MultiDatePicker with some fixes and SPM!
+> Fork of https://github.com/peterent/MultiDatePicker with some fixes and SPM!
 
 > Requires iOS 14, Xcode 12
 
