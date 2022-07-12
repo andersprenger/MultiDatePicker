@@ -71,7 +71,6 @@ struct MDPMonthView: View {
             RoundedRectangle(cornerRadius: 10)
                 .stroke(Color.accentColor, lineWidth: 1)
         )
-        .padding()
         .aspectRatio(1, contentMode: .fit)
     }
 }
