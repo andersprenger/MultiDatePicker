@@ -55,23 +55,20 @@ struct MDPMonthView: View {
             }
             .padding(.leading, 18)
             
-            GeometryReader { reader in
-                if showMonthYearPicker {
-                    MDPMonthYearPicker(date: monthDataModel.controlDate) { (month, year) in
-                        self.monthDataModel.show(month: month, year: year)
-                    }
-                    .padding(.horizontal)
+            if showMonthYearPicker {
+                MDPMonthYearPicker(date: monthDataModel.controlDate) { (month, year) in
+                    self.monthDataModel.show(month: month, year: year)
                 }
-                else {
-                    MDPContentView()
-                }
+                .padding(.horizontal)
+            }
+            else {
+                MDPContentView()
             }
         }
         .overlay(
             RoundedRectangle(cornerRadius: 10)
                 .stroke(Color.accentColor, lineWidth: 1)
         )
-        .aspectRatio(1, contentMode: .fit)
     }
 }
 

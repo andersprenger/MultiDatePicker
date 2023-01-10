@@ -44,5 +44,6 @@ struct MDPContentView: View {
 struct MonthContentView_Previews: PreviewProvider {
     static var previews: some View {
         MDPContentView()
+            .environmentObject(MDPModel())
     }
 }

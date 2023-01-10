@@ -42,5 +42,6 @@ struct MDPMonthYearPickerButton: View {
 struct MonthYearPickerButton_Previews: PreviewProvider {
     static var previews: some View {
         MDPMonthYearPickerButton(isPresented: .constant(false))
+            .environmentObject(MDPModel())
     }
 }
