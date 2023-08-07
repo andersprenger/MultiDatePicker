@@ -65,10 +65,6 @@ struct MDPMonthYearPicker: View {
             .frame(width: 100)
             .clipped()
         }
-        .overlay(
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.accentColor, lineWidth: 1)
-        )
         .padding(.bottom)
     }
 }
