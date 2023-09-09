@@ -65,10 +65,7 @@ struct MDPMonthView: View {
                 MDPContentView()
             }
         }
-        .overlay(
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.accentColor, lineWidth: 1)
-        )
+      
     }
 }
 
